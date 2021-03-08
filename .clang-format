@@ -1,0 +1,10 @@
+BasedOnStyle: Google
+Language: Cpp
+
+AlignConsecutiveMacros: true
+BinPackArguments: false
+ColumnLimit: 0
+IncludeBlocks: Preserve
+IndentWidth: 4
+TabWidth: 4
+UseTab: Always

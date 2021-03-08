@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build",
+            "command": "wsl",
+            "args": [
+                "make"
+            ],
+            "options": {
+                "cwd": "${fileDirname}",
+                "statusbar": {
+                    "label": "$(tools) Build",
+                    "filePattern": "\\.cpp$"
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Upload",
+            "command": "wsl",
+            "args": [
+                "make",
+                "upload"
+            ],
+            "options": {
+                "cwd": "${fileDirname}",
+                "statusbar": {
+                    "label": "$(cloud-upload) Upload",
+                    "filePattern": "\\.cpp$"
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}

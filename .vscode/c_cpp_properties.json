@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}/lib/**",
+                "D:/arduino/hardware/arduino/avr/cores/arduino/",
+                "D:/arduino/hardware/arduino/avr/variants/standard/",
+                "D:/arduino/hardware/arduino/avr/libraries/SPI/src",
+                "D:/arduino/hardware/tools/avr/avr/include/",
+                "D:/arduino/hardware/tools/avr/avr/include/avr/",
+                "D:/arduino/hardware/tools/avr/avr/include/compat/",
+                "D:/arduino/hardware/tools/avr/avr/include/util/",
+                "D:/arduino/hardware/tools/avr/lib/gcc/avr/7.3.0/include/",
+                "D:/arduino/hardware/tools/avr/lib/gcc/avr/7.3.0/include-fixed/",
+                "D:/arduino/libraries/Ethernet/src/",
+                "D:/arduino/libraries/LiquidCrystal/src/",
+                "D:/arduino/hardware/arduino/avr/libraries/Wire/src"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USBCON",
+                "ARDUINO=10813"
+            ],
+            "compilerPath": "D:\\arduino\\hardware\\tools\\avr\\bin\\avr-gcc.exe -mmcu=atmega328p",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
