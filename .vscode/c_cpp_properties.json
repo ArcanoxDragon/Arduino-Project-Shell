@@ -26,7 +26,7 @@
             ],
             "compilerPath": "D:\\arduino\\hardware\\tools\\avr\\bin\\avr-gcc.exe -mmcu=atmega328p",
             "cStandard": "gnu11",
-            "cppStandard": "gnu++17",
+            "cppStandard": "gnu++11",
             "intelliSenseMode": "gcc-x64"
         }
     ],

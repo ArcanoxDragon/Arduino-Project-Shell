@@ -1,15 +1,11 @@
-#ifndef util_H
-#define util_H
+#ifndef CommonLib_util_H
+#define CommonLib_util_H
 
 #include <WString.h>
 
-// TODO: Uncomment the following line to enable serial logging; comment it to disable serial logging
-// #define USE_SERIAL
-
-// TODO: Uncomment the following line to enable OLED display; comment it to disable OLED display
-// #define USE_DISPLAY
-
+#ifndef SERIAL_BAUD
 #define SERIAL_BAUD 115200
+#endif
 
 #ifdef USE_SERIAL
 #define SLOG(msg) Serial.println(F(msg)); \
@@ -22,5 +18,7 @@ void error(const char *message);
 void error(const __FlashStringHelper *message);
 bool isInitialized();
 void setInitialized(bool initialized);
+
+#define ARRAYLEN(array) sizeof(array) / sizeof(array[0])
 
 #endif

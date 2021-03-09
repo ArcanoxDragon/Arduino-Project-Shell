@@ -1,14 +1,14 @@
-#ifndef modules_display_H
-#define modules_display_H
+#ifndef CommonLib_display_H
+#define CommonLib_display_H
 
-#ifdef USE_DISPLAY
+#if defined(USE_DISPLAY) || defined(_DISPLAY_CPP)
 
-#include "StatusManager.h"
-#include "oled.h"
+#include <stdint.h>
+#include <WString.h>
 
 void displaySetup();
 void displayLoop();
-void clearDisplay();
+void clearScreen();
 void putLine(uint32_t line, const char *format, ...) __attribute__((format(printf, 2, 3)));
 void putLine(uint32_t line, const __FlashStringHelper *format, ...);
 
@@ -18,7 +18,7 @@ void putLine(uint32_t line, const __FlashStringHelper *format, ...);
 
 #define displaySetup()
 #define displayLoop()
-#define clearDisplay()
+#define clearScreen()
 #define putLine(line, format, ...)
 
 #endif

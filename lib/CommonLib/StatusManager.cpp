@@ -1,10 +1,8 @@
 #include "util.h"
 
-#ifdef USE_DISPLAY
-
 #include <Arduino.h>
-
 #include <assert.h>
+
 #include "StatusManager.h"
 
 // #region Public
@@ -105,7 +103,7 @@ void StatusManager::scroll() {
 void StatusManager::write(uint8_t line) {
 	if (!this->messages) return;
 
-	assert_line(line);
+	assert(line < OLED_ROWS);
 
 	uint8_t lineTop = OLED_CHAR_HEIGHT * line;
 
@@ -133,5 +131,3 @@ void StatusManager::printOffset(char *message, int16_t offset) {
 }
 
 // #endregion Private
-
-#endif

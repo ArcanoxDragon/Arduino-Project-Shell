@@ -1,1 +1,1 @@
-Put module classes here and add them in modules.cpp
+Put additional module classes here and add references to them in main.cpp

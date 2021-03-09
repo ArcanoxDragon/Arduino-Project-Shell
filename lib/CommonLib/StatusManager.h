@@ -1,5 +1,5 @@
-#ifndef Status_H
-#define Status_H
+#ifndef CommonLib_StatusManager_H
+#define CommonLib_StatusManager_H
 
 #include "oled.h"
 

@@ -10,7 +10,7 @@ void error(const char *message) {
 	snprintf(errMessage, sizeof(errMessage), "Error: %s", message);
 #endif
 #ifdef USE_DISPLAY
-	clearDisplay();
+	clearScreen();
 	putLine(6, F("ERROR:"));
 	putLine(7, message);
 #endif

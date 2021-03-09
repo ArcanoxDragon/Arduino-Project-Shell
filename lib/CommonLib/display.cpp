@@ -1,7 +1,3 @@
-#include "util.h"
-
-#ifdef USE_DISPLAY
-
 #if 1 == 0
 // Arduino-Makefile automatically detects libraries based on #includes in source (.c or .cpp) files.
 // It doesn't detect transient dependencies or libraries that don't have a header with the same name
@@ -15,6 +11,11 @@
 #include <Wire.h>
 #endif
 
+#include "oled.h"
+#include "util.h"
+#include "StatusManager.h"
+
+#define _DISPLAY_CPP // Make sure we get the right declarations
 #include "display.h"
 
 OledDisplay *oled;
@@ -41,7 +42,7 @@ void displayLoop() {
 	status->update();
 }
 
-void clearDisplay() {
+void clearScreen() {
 	status->clear();
 }
 
@@ -90,5 +91,3 @@ void putLine(uint32_t line, const __FlashStringHelper *format, ...) {
 
 	status->put(line, message);
 }
-
-#endif
