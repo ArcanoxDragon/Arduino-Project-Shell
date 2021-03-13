@@ -16,6 +16,7 @@
 
 void error(const char *message);
 void error(const __FlashStringHelper *message);
+bool didError();
 bool isInitialized();
 void setInitialized(bool initialized);
 

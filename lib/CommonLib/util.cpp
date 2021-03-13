@@ -3,6 +3,7 @@
 #include "display.h"
 
 bool initialized = false;
+bool errorThrown = false;
 
 void error(const char *message) {
 #ifdef USE_SERIAL
@@ -14,7 +15,26 @@ void error(const char *message) {
 	putLine(6, F("ERROR:"));
 	putLine(7, message);
 #endif
-	initialized = false;
+	errorThrown = true;
+}
+
+void error(const __FlashStringHelper *message) {
+	// read the flash memory into a buffer
+	const char *messagePtr = reinterpret_cast<const char *>(message);
+	uint32_t messageLen = strlen_P(messagePtr);
+	char messageBuf[messageLen + 1];
+
+	for (uint32_t i = 0; i < messageLen; i++) {
+		messageBuf[i] = pgm_read_byte(messagePtr + i);
+	}
+
+	messageBuf[messageLen] = 0;
+	
+	error(messageBuf);
+}
+
+bool didError() {
+	return errorThrown;
 }
 
 bool isInitialized() {

@@ -20,6 +20,12 @@ void commonSetup(uint8_t numModules, Module* const modules[]) {
 
 		putLineF(1, "Module %d/%d: %s", m + 1, numModules, module->getName());
 		module->setup();
+		
+		if (didError()) {
+			// Halt execution if module setup threw an error
+			putLineF(OLED_ROWS - 1, "Error");
+			return;
+		}
 	}
 
 	/* Finally indicate that we're initialized */
@@ -32,7 +38,7 @@ void commonLoop(uint8_t numModules, Module* const modules[]) {
 	/* Update display */
 	displayLoop();
 
-	if (!isInitialized()) {
+	if (!isInitialized() || didError()) {
 		yield();
 		return;
 	}
