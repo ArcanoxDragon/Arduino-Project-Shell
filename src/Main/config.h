@@ -5,7 +5,7 @@
 // #define USE_SERIAL
 
 // TODO: Uncomment the following line to enable OLED display; comment it to disable OLED display
-#define USE_DISPLAY
+// #define USE_DISPLAY
 
 // The following commented-out defines can be uncommented to use a non-default value (the values below are the defaults)
 
